@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/broadsheet-ee791a6a-79e3-4771-8e39-c7d5b79152d8/styles.css">
+  <script src="_ds/broadsheet-ee791a6a-79e3-4771-8e39-c7d5b79152d8/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); }
+    a { color: var(--color-accent-700); text-decoration: underline; }
+    a:hover { color: var(--color-accent-900); }
+  </style>
+</helmet>
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px) var(--space-8); filter: blur(1px); opacity: 0.6; pointer-events: none;">
+  <nav class="nav" style="padding-inline: 0;">
+    <span class="nav-brand">Tahoma Junior Bears</span>
+    <a href="Gallery.dc.html" style="text-decoration: none;">All games</a>
+  </nav>
+  <section style="padding: var(--space-6) 0;">
+    <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 40px; margin: 0;">Team Photo Archive</h1>
+  </section>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4);">
+    <div class="halftone" style="aspect-ratio: 4/3;"><image-slot id="bg1" shape="rect" placeholder=""></image-slot></div>
+    <div class="halftone" style="aspect-ratio: 4/3;"><image-slot id="bg2" shape="rect" placeholder=""></image-slot></div>
+    <div class="halftone" style="aspect-ratio: 4/3;"><image-slot id="bg3" shape="rect" placeholder=""></image-slot></div>
+    <div class="halftone" style="aspect-ratio: 4/3;"><image-slot id="bg4" shape="rect" placeholder=""></image-slot></div>
+  </div>
+</div>
+
+<div class="dialog-backdrop" style="position: fixed;">
+  <div class="dialog elev-lg" style="max-width: 920px; width: min(92vw, 920px); padding: var(--space-6); display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--space-6);">
+
+    <div style="position: relative;">
+      <div class="cmyk" style="margin: 0;">
+        <div class="print" style="aspect-ratio: 4/3;">
+          <image-slot id="lightbox-photo" shape="rect" placeholder="Selected photo"></image-slot>
+        </div>
+      </div>
+      <button type="button" class="btn-icon" aria-label="Previous photo" style="position: absolute; left: var(--space-2); top: 50%; transform: translateY(-50%);">&larr;</button>
+      <button type="button" class="btn-icon" aria-label="Next photo" style="position: absolute; right: var(--space-2); top: 50%; transform: translateY(-50%);">&rarr;</button>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <span class="tag tag-accent-2">#7</span>
+        <button type="button" class="btn-icon" aria-label="Close">&times;</button>
+      </div>
+      <h3 class="dialog-title" style="margin-top: var(--space-3);">#7 makes a catch</h3>
+      <p style="font-family: var(--font-body); font-size: 14px; color: var(--color-neutral-700); margin: var(--space-2) 0 0;">vs. Eastside Elks &middot; Sept 20, 2026 &middot; Photo 12 of 34</p>
+      <p style="font-family: var(--font-body); font-size: 14px; color: var(--color-neutral-600); margin: var(--space-2) 0 0;">Shot by Morgan R.</p>
+
+      <div style="flex: 1;"></div>
+
+      <div class="dialog-actions" style="justify-content: flex-start; flex-direction: column; align-items: stretch; gap: var(--space-2);">
+        <button type="button" class="btn btn-primary btn-block">Download this photo</button>
+        <button type="button" class="btn btn-secondary btn-block">Download all of #7's photos</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>

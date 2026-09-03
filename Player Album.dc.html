@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/broadsheet-ee791a6a-79e3-4771-8e39-c7d5b79152d8/styles.css">
+  <script src="_ds/broadsheet-ee791a6a-79e3-4771-8e39-c7d5b79152d8/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); }
+    a { color: var(--color-accent-700); text-decoration: underline; }
+    a:hover { color: var(--color-accent-900); }
+  </style>
+</helmet>
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px) var(--space-8);">
+
+  <nav class="nav" style="padding-inline: 0;">
+    <span class="nav-brand">Tahoma Junior Bears</span>
+    <a href="Gallery.dc.html" style="text-decoration: none;">All games</a>
+    <span style="font-family: var(--font-body); font-size: 14px; color: var(--color-neutral-700);">Signed in as Morgan R.</span>
+    <a href="Sign-in.dc.html" style="text-decoration: none;">Sign out</a>
+  </nav>
+
+  <p style="margin: var(--space-4) 0 0;"><a href="Gallery.dc.html">&larr; Back to all games</a></p>
+
+  <section style="display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); padding: var(--space-4) 0 var(--space-6);">
+    <div>
+      <span class="tag tag-accent-2" style="margin-bottom: var(--space-2); display: inline-block;">#7</span>
+      <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 40px; line-height: 1.1; margin: 0; color: var(--color-text);">Jordan's Photos</h1>
+      <p style="font-family: var(--font-body); font-style: italic; font-size: 17px; margin: var(--space-2) 0 0; color: var(--color-neutral-700);">14 photos across 2 games this season</p>
+    </div>
+    <button type="button" class="btn btn-primary">Download all of Jordan's photos</button>
+  </section>
+
+  <sc-for list="{{ games }}" as="game" hint-placeholder-count="2">
+    <section style="padding: var(--space-6) 0; border-top: 1px solid var(--color-neutral-300);">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4);">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 22px; margin: 0;">{{ game.label }}</h2>
+          <p style="font-family: var(--font-body); font-size: 14px; color: var(--color-neutral-700); margin: var(--space-1) 0 0;">{{ game.date }}</p>
+        </div>
+        <button type="button" class="btn btn-ghost">Download from this game</button>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4);">
+        <sc-for list="{{ game.photos }}" as="photo" hint-placeholder-count="4">
+          <div>
+            <div class="halftone" style="aspect-ratio: 4/3;">
+              <image-slot id="{{ photo.id }}" shape="rect" placeholder="{{ photo.caption }}"></image-slot>
+            </div>
+            <span style="display: block; font-family: var(--font-body); font-size: 13px; color: var(--color-neutral-700); margin-top: var(--space-2);">{{ photo.caption }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </sc-for>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      games: [
+        { label: 'vs. Eastside Elks', date: 'Sept 20, 2026', photos: [
+          { id: 'pa-g1p1', caption: '#7 breaks a tackle' },
+          { id: 'pa-g1p2', caption: '#7 makes a catch' },
+          { id: 'pa-g1p3', caption: '#7 lines up at safety' },
+        ]},
+        { label: 'vs. Riverbend Hawks', date: 'Sept 27, 2026', photos: [
+          { id: 'pa-g2p1', caption: '#7 on defense' },
+          { id: 'pa-g2p2', caption: '#7 in the huddle' },
+        ]},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/broadsheet-ee791a6a-79e3-4771-8e39-c7d5b79152d8/styles.css">
+  <script src="_ds/broadsheet-ee791a6a-79e3-4771-8e39-c7d5b79152d8/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); }
+    a { color: var(--color-accent-700); text-decoration: underline; }
+    a:hover { color: var(--color-accent-900); }
+  </style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <div style="padding: var(--space-6) var(--space-6) var(--space-4); border-bottom: 4px solid var(--color-text);">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1100px; margin: 0 auto;">
+      <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text);">Team Sideline</div>
+      <div style="font-family: var(--font-body); font-size: 14px; color: var(--color-neutral-700);">Vol. 1 &middot; Fall 2026 Season</div>
+    </div>
+    <div style="max-width: 1100px; margin: var(--space-3) auto 0; border-top: 1px solid var(--color-text); padding-top: var(--space-3);">
+      <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 56px; line-height: 1.02; margin: 0; color: var(--color-text);">Tahoma Junior Bears</h1>
+      <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; margin: var(--space-2) 0 0; color: var(--color-neutral-700);">3rd Grade &middot; 2026&ndash;2027 Season &middot; Team Photo Archive</p>
+    </div>
+  </div>
+
+  <div style="flex: 1; display: flex; max-width: 1100px; width: 100%; margin: 0 auto; padding: var(--space-8) var(--space-6); gap: var(--space-10); align-items: flex-start;">
+
+    <div style="flex: 1.1; padding-top: var(--space-4);">
+      <p style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 var(--space-3);">Sideline Report</p>
+      <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 32px; line-height: 1.2; margin: 0 0 var(--space-4); max-width: 22ch;">Every game day, straight from the sideline to your family.</h2>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; color: var(--color-neutral-800); max-width: 42ch; margin: 0 0 var(--space-4);">This site holds every photo taken at practices and games this season. Sign in with the email your family registered to browse by game, find your player's shots, and download what you'd like to keep.</p>
+      <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--color-neutral-700); max-width: 42ch; margin: 0;">Access is limited to families on the team roster. No public links, no third-party sign-in.</p>
+    </div>
+
+    <div class="card elev-md" style="flex: 1; max-width: 420px; padding: var(--space-6);">
+      <p class="card-kicker">Family Sign-In</p>
+      <h3 class="card-title" style="margin-bottom: var(--space-4);">Welcome back</h3>
+
+      <div class="field" style="margin-bottom: var(--space-4);">
+        <label for="email">Email address</label>
+        <input class="input" id="email" type="email" placeholder="parent@email.com" autocomplete="email">
+      </div>
+
+      <div class="field" style="margin-bottom: var(--space-2);">
+        <label for="password">Password</label>
+        <input class="input" id="password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="current-password">
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; margin-bottom: var(--space-5);">
+        <a href="#" style="font-family: var(--font-body); font-size: 14px;">Forgot password?</a>
+      </div>
+
+      <button class="btn btn-primary btn-block" type="button">Sign in</button>
+
+      <p style="font-family: var(--font-body); font-size: 14px; color: var(--color-neutral-700); text-align: center; margin: var(--space-4) 0 0;">
+        New to the team? <a href="#">Request an invite</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div style="border-top: 1px solid var(--color-neutral-300); padding: var(--space-4) var(--space-6); max-width: 1100px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+    <p style="font-family: var(--font-body); font-size: 13px; color: var(--color-neutral-600); margin: 0; text-align: center;">Tahoma Junior Bears Football Club &middot; Photos by the team photographer &middot; For roster families only</p>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>
